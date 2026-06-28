@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Arpita! 🌸</title>
+    <!-- Google Fonts for playful anime typography and cursive calligraphy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Sacramento&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Canvas for falling Sakura, stars, drifting clouds, and flowers -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Global interactive background balloon container -->
+    <div id="balloon-bg-layer"></div>
+
+    <!-- FIXED TOP HEADER: Bunting garland, lights, hanging polaroids, balloons, lavender, orchids & sunflowers -->
+    <header id="birthday-header">
+        <!-- Colored lightbulbs hanging -->
+        <div class="lightbulbs-string">
+            <div class="lightbulb bulb-blue"></div>
+            <div class="lightbulb bulb-pink"></div>
+            <div class="lightbulb bulb-green"></div>
+            <div class="lightbulb bulb-orange"></div>
+            <div class="lightbulb bulb-red"></div>
+            <div class="lightbulb bulb-green2"></div>
+        </div>
+
+        <!-- Hanging polaroids, party hats, poppers, ribbons & single flowers -->
+        <div class="hanging-polaroids">
+            <!-- Left Margin Hanging Items -->
+            <!-- Hanging Birthday Cap (Triangular hat) -->
+            <div class="h-deco hanging-hat-left">
+                <svg viewBox="0 0 60 80" class="hat-svg">
+                    <line x1="30" y1="0" x2="30" y2="20" stroke="#888" stroke-width="1" />
+                    <polygon points="30,20 10,70 50,70" fill="#ffa3b1" stroke="#ff7b90" stroke-width="1.5" />
+                    <circle cx="30" cy="40" r="3" fill="#ffe082" />
+                    <circle cx="22" cy="55" r="3" fill="#80deea" />
+                    <circle cx="38" cy="55" r="3" fill="#c8e6c9" />
+                    <circle cx="30" cy="18" r="5" fill="#ffe082" />
+                </svg>
+            </div>
+
+            <!-- Hanging Sunflower (Single Flower) -->
+            <div class="h-deco hanging-flower-sunflower-left">
+                <svg viewBox="0 0 60 80" class="flower-svg">
+                    <line x1="30" y1="0" x2="30" y2="25" stroke="#888" stroke-width="1" />
+                    <g transform="translate(30, 48) scale(0.6)">
+                        <path d="M0,0 C-10,-30 10,-30 0,0 C-30,-10 -30,10 0,0 C-10,30 10,30 0,0 C30,-10 30,10 0,0"
+                            fill="#fdd835" />
+                        <path d="M0,0 C-20,-20 0,-30 0,0 C-30,0 -20,20 0,0 C20,20 0,30 0,0 C30,0 20,-20 0,0"
+                            fill="#fdb813" />
+                        <circle cx="0" cy="0" r="12" fill="#5d4037" />
+                        <circle cx="0" cy="0" r="8" fill="#3e2723" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="h-polaroid polaroid-left-1">
+                <div class="h-polaroid-img washi-tape-pink">🌸</div>
+            </div>
+
+            <!-- Hanging Lavender (Single Flower) -->
+            <div class="h-deco hanging-flower-lavender-left">
+                <svg viewBox="0 0 60 80" class="flower-svg">
+                    <line x1="30" y1="0" x2="30" y2="20" stroke="#888" stroke-width="1" />
+                    <g transform="translate(30, 30) scale(0.55)">
+                        <path d="M0,80 L0,-10" stroke="#7e9c80" stroke-width="3" fill="none" />
+                        <ellipse cx="0" cy="-10" rx="6" ry="10" fill="#9575cd" />
+                        <ellipse cx="-5" cy="5" rx="6" ry="10" fill="#b39ddb" transform="rotate(-15, -5, 5)" />
+                        <ellipse cx="5" cy="5" rx="6" ry="10" fill="#b39ddb" transform="rotate(15, 5, 5)" />
+                        <ellipse cx="-5" cy="25" rx="6" ry="10" fill="#9575cd" transform="rotate(-15, -5, 25)" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="h-polaroid polaroid-left-2">
+                <div class="h-polaroid-img washi-tape-blue">🍵</div>
+            </div>
+
+            <!-- Hanging Curled Spiral Ribbon -->
+            <div class="h-deco hanging-ribbon-left">
+                <svg viewBox="0 0 40 100" class="ribbon-svg">
+                    <line x1="20" y1="0" x2="20" y2="20" stroke="#888" />
+                    <path d="M20,20 C40,30 0,40 20,50 C40,60 0,70 20,80 C40,90 0,100 20,110" fill="none"
+                        stroke="#80deea" stroke-width="4" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <!-- Right Margin Hanging Items -->
+            <div class="h-polaroid polaroid-right-1">
+                <div class="h-polaroid-img washi-tape-gold">🧁</div>
+            </div>
+
+            <!-- Hanging Orchid (Single Flower) -->
+            <div class="h-deco hanging-flower-orchid-right">
+                <svg viewBox="0 0 60 80" class="flower-svg">
+                    <line x1="30" y1="0" x2="30" y2="25" stroke="#888" stroke-width="1" />
+                    <g transform="translate(30, 48) scale(0.6)">
+                        <ellipse cx="0" cy="-25" rx="16" ry="24" fill="#fff0f3" stroke="#ffd1dc" stroke-width="1" />
+                        <ellipse cx="-22" cy="5" rx="24" ry="16" fill="#fff0f3" stroke="#ffd1dc" stroke-width="1"
+                            transform="rotate(-15, -22, 5)" />
+                        <ellipse cx="22" cy="5" rx="24" ry="16" fill="#fff0f3" stroke="#ffd1dc" stroke-width="1"
+                            transform="rotate(15, 22, 5)" />
+                        <ellipse cx="-15" cy="25" rx="18" ry="18" fill="#fff0f3" stroke="#ffd1dc" stroke-width="1" />
+                        <ellipse cx="15" cy="25" rx="18" ry="18" fill="#fff0f3" stroke="#ffd1dc" stroke-width="1" />
+                        <circle cx="0" cy="5" r="8" fill="#e91e63" />
+                        <circle cx="0" cy="5" r="4" fill="#ffeb3b" />
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Hanging Party Popper (Confetti blast) -->
+            <div class="h-deco hanging-popper-right">
+                <svg viewBox="0 0 60 80" class="popper-svg">
+                    <line x1="30" y1="0" x2="30" y2="20" stroke="#888" />
+                    <polygon points="30,55 15,25 45,25" fill="#ffe082" stroke="#fdb813" stroke-width="1.5" />
+                    <path d="M20,15 Q15,5 10,12" stroke="#ff5c75" stroke-width="2" fill="none" />
+                    <path d="M30,12 Q32,2 40,8" stroke="#80deea" stroke-width="2" fill="none" />
+                    <path d="M40,15 Q48,5 44,18" stroke="#c8e6c9" stroke-width="2" fill="none" />
+                </svg>
+            </div>
+
+            <!-- Hanging Lavender 2 (Single Flower) -->
+            <div class="h-deco hanging-flower-lavender-right">
+                <svg viewBox="0 0 60 80" class="flower-svg">
+                    <line x1="30" y1="0" x2="30" y2="20" stroke="#888" stroke-width="1" />
+                    <g transform="translate(30, 30) scale(0.55)">
+                        <path d="M0,80 L0,-10" stroke="#7e9c80" stroke-width="3" fill="none" />
+                        <ellipse cx="0" cy="-10" rx="6" ry="10" fill="#9575cd" />
+                        <ellipse cx="-5" cy="5" rx="6" ry="10" fill="#b39ddb" transform="rotate(-15, -5, 5)" />
+                        <ellipse cx="5" cy="5" rx="6" ry="10" fill="#b39ddb" transform="rotate(15, 5, 5)" />
+                        <ellipse cx="-5" cy="25" rx="6" ry="10" fill="#9575cd" transform="rotate(-15, -5, 25)" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="h-polaroid polaroid-right-2">
+                <div class="h-polaroid-img washi-tape-green">✨</div>
+            </div>
+
+            <!-- Hanging Ribbon 2 -->
+            <div class="h-deco hanging-ribbon-right">
+                <svg viewBox="0 0 40 100" class="ribbon-svg">
+                    <line x1="20" y1="0" x2="20" y2="20" stroke="#888" />
+                    <path d="M20,20 C40,30 0,40 20,50 C40,60 0,70 20,80 C40,90 0,100 20,110" fill="none"
+                        stroke="#ffa3b1" stroke-width="4" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Pennant Garland Flag Banner: HAPPY BIRTHDAY (1.5x BIGGER) -->
+        <div class="pennant-garland">
+            <div class="string-line"></div>
+            <div class="flags-row">
+                <span class="flag flag-pink">H</span>
+                <span class="flag flag-yellow">A</span>
+                <span class="flag flag-blue">P</span>
+                <span class="flag flag-green">P</span>
+                <span class="flag flag-lavender">Y</span>
+                <span class="flag-space">&nbsp;</span>
+                <span class="flag flag-pink">B</span>
+                <span class="flag flag-yellow">I</span>
+                <span class="flag flag-blue">R</span>
+                <span class="flag flag-green">T</span>
+                <span class="flag flag-lavender">H</span>
+                <span class="flag flag-pink">D</span>
+                <span class="flag flag-yellow">A</span>
+                <span class="flag flag-blue">Y</span>
+            </div>
+        </div>
+
+        <!-- Floating balloons spelling "ARPITA" -->
+        <div class="hbd-balloons-row">
+            <div class="hbd-balloon balloon-pink">A</div>
+            <div class="hbd-balloon balloon-gold">R</div>
+            <div class="hbd-balloon balloon-blue">P</div>
+            <div class="hbd-balloon balloon-green">I</div>
+            <div class="hbd-balloon balloon-yellow">T</div>
+            <div class="hbd-balloon balloon-lavender">A</div>
+        </div>
+    </header>
+
+    <!-- Music toggle button -->
+    <button id="audio-toggle" class="audio-btn" aria-label="Toggle music">
+        <i class="fas fa-music"></i>
+        <span class="pulse-ring"></span>
+    </button>
+
+    <!-- Back to Gift button -->
+    <button id="gift-back-btn" class="back-btn hidden" aria-label="Go back to gift box">
+        <i class="fas fa-arrow-left"></i>🎁
+    </button>
+
+    <!-- INTRO MODULE: Animated Top-Down Gift Box -->
+    <div id="intro-screen" class="screen-overlay">
+        <!-- Interactive mouse-following balloons in the remaining space of viewport -->
+        <div id="intro-balloons-container"></div>
+
+        <div class="intro-container">
+            <h2 class="gift-caption">A special delivery has arrived for...</h2>
+            <h1 class="gift-target">Arpita Biswas</h1>
+            <p class="gift-subtext">Tap the Gold Shin-chan Seal to unlock your special birthday surprise!</p>
+
+            <!-- Clickable generated 3D illustration of Top-Down Gift Box (Square layout) -->
+            <div class="gift-illustration-wrapper" id="gift-box-trigger">
+                <img src="top_down_gift_box.png" alt="Happy Birthday gift delivery" class="gift-illustration-img">
+
+                <!-- Pulsing Call-to-Action badge -->
+                <div class="click-to-open-badge">Click to Open! ✨</div>
+
+                <!-- Centered Boba Seal Click Target (Dead center for top-down box) -->
+                <div class="seal-click-target centered-seal"></div>
+                <div class="glow-ring centered-glow"></div>
+            </div>
+            <!-- Stylish dynamic shadow underneath the floating card -->
+            <div class="card-shadow"></div>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div id="main-content" class="main-container hidden">
+        <!-- Japanese Washitsu Room Scene -->
+        <div class="japanese-washitsu-room scroll-locked">
+            <!-- SECTION 1: Cake Wishing Scene (Takes exactly 100% height of viewport) -->
+            <div class="room-section room-cake-scene">
+                <!-- Shoji Wall Section (Takes up full height of wishing section) -->
+                <div class="shoji-screen-wall">
+                    <h2 class="room-title">Make a Wish! 🎂</h2>
+                    <p class="room-desc">Click or tap the candle flame to blow it out.</p>
+                    
+                    <!-- Floating Sakura Petals (Wind Float – 28 petals scattered) -->
+                    <div class="sakura-petals-layer">
+                        <div class="sakura-petal" style="top:8%;  left:5%;  animation-delay:0s;    animation-duration:9s;"></div>
+                        <div class="sakura-petal" style="top:22%; left:15%; animation-delay:1.2s;  animation-duration:11s;"></div>
+                        <div class="sakura-petal" style="top:55%; left:22%; animation-delay:0.5s;  animation-duration:8s;"></div>
+                        <div class="sakura-petal" style="top:78%; left:38%; animation-delay:2.8s;  animation-duration:10s;"></div>
+                        <div class="sakura-petal" style="top:18%; left:55%; animation-delay:1.8s;  animation-duration:9.5s;"></div>
+                        <div class="sakura-petal" style="top:65%; left:68%; animation-delay:0.8s;  animation-duration:8.5s;"></div>
+                        <div class="sakura-petal" style="top:40%; left:80%; animation-delay:3.2s;  animation-duration:10s;"></div>
+                        <div class="sakura-petal" style="top:85%; left:90%; animation-delay:2s;    animation-duration:9s;"></div>
+                        <div class="sakura-petal" style="top:32%; left:48%; animation-delay:4s;    animation-duration:11s;"></div>
+                        <div class="sakura-petal" style="top:72%; left:12%; animation-delay:3.5s;  animation-duration:8s;"></div>
+                        <!-- Extra petals -->
+                        <div class="sakura-petal" style="top:5%;  left:30%; animation-delay:3.8s;  animation-duration:9.5s;"></div>
+                        <div class="sakura-petal" style="top:44%; left:85%; animation-delay:1.3s;  animation-duration:8.5s;"></div>
+                        <div class="sakura-petal" style="top:90%; left:50%; animation-delay:0.6s;  animation-duration:10.5s;"></div>
+                        <div class="sakura-petal" style="top:58%; left:5%;  animation-delay:4.5s;  animation-duration:9s;"></div>
+                        <div class="sakura-petal" style="top:15%; left:72%; animation-delay:2.3s;  animation-duration:10s;"></div>
+                        <div class="sakura-petal" style="top:50%; left:60%; animation-delay:5.2s;  animation-duration:9.5s;"></div>
+                        <div class="sakura-petal" style="top:38%; left:2%;  animation-delay:1.7s;  animation-duration:11.5s;"></div>
+                        <div class="sakura-petal" style="top:82%; left:70%; animation-delay:3.1s;  animation-duration:8.5s;"></div>
+                        <!-- Small petals -->
+                        <div class="sakura-petal sm" style="top:15%; left:88%; animation-delay:0.7s;  animation-duration:12s;"></div>
+                        <div class="sakura-petal sm" style="top:48%; left:33%; animation-delay:1.5s;  animation-duration:9s;"></div>
+                        <div class="sakura-petal sm" style="top:88%; left:58%; animation-delay:3.5s;  animation-duration:10s;"></div>
+                        <div class="sakura-petal sm" style="top:60%; left:75%; animation-delay:0.3s;  animation-duration:7.5s;"></div>
+                        <div class="sakura-petal sm" style="top:28%; left:8%;  animation-delay:2.5s;  animation-duration:11s;"></div>
+                        <div class="sakura-petal sm" style="top:5%;  left:62%; animation-delay:1s;    animation-duration:8.5s;"></div>
+                        <div class="sakura-petal sm" style="top:35%; left:95%; animation-delay:2.1s;  animation-duration:8s;"></div>
+                        <div class="sakura-petal sm" style="top:68%; left:50%; animation-delay:3.9s;  animation-duration:11.5s;"></div>
+                        <div class="sakura-petal sm" style="top:12%; left:42%; animation-delay:4.7s;  animation-duration:9s;"></div>
+                        <div class="sakura-petal sm" style="top:75%; left:28%; animation-delay:1.9s;  animation-duration:10s;"></div>
+                    </div>
+
+                    <!-- Twinkling Sparkle Stars -->
+                    <div class="sparkle-stars-layer">
+                        <div class="sparkle-star" style="top:10%; left:6%;  animation-delay:0s;"></div>
+                        <div class="sparkle-star" style="top:18%; left:84%; animation-delay:0.7s;"></div>
+                        <div class="sparkle-star" style="top:38%; left:16%; animation-delay:1.4s;"></div>
+                        <div class="sparkle-star" style="top:58%; left:92%; animation-delay:0.3s;"></div>
+                        <div class="sparkle-star" style="top:72%; left:10%; animation-delay:2.1s;"></div>
+                        <div class="sparkle-star" style="top:45%; left:78%; animation-delay:1.8s;"></div>
+                        <div class="sparkle-star" style="top:82%; left:72%; animation-delay:0.9s;"></div>
+                        <div class="sparkle-star" style="top:12%; left:42%; animation-delay:2.5s;"></div>
+                        <div class="sparkle-star" style="top:68%; left:28%; animation-delay:1.1s;"></div>
+                        <div class="sparkle-star" style="top:88%; left:50%; animation-delay:3s;"></div>
+                        <div class="sparkle-star" style="top:30%; left:60%; animation-delay:1.6s;"></div>
+                        <div class="sparkle-star" style="top:52%; left:45%; animation-delay:2.8s;"></div>
+                    </div>
+
+                    <!-- Floating Balloons -->
+                    <div class="balloon-layer">
+                        <div class="balloon" style="bottom:12%; left:2%;  background:linear-gradient(145deg,#ff9eb5,#ff4d79); animation-delay:0s;   animation-duration:4s;"></div>
+                        <div class="balloon" style="bottom:28%; left:8%;  background:linear-gradient(145deg,#d4b3f0,#a55ee8); animation-delay:1.4s; animation-duration:5s;"></div>
+                        <div class="balloon" style="top:6%;    left:4%;  background:linear-gradient(145deg,#ffe680,#ffc107); animation-delay:0.6s; animation-duration:4.5s;"></div>
+                        <div class="balloon" style="bottom:12%; right:2%; background:linear-gradient(145deg,#9de8ff,#29b6f6); animation-delay:1s;   animation-duration:4.8s;"></div>
+                        <div class="balloon" style="bottom:30%; right:8%; background:linear-gradient(145deg,#ff9eb5,#ff4d79); animation-delay:2.2s; animation-duration:5.5s;"></div>
+                        <div class="balloon" style="top:6%;    right:4%; background:linear-gradient(145deg,#a8f0c6,#26c47a); animation-delay:0.3s; animation-duration:4.2s;"></div>
+                        <div class="balloon lg" style="bottom:5%;  left:18%; background:linear-gradient(145deg,#d4b3f0,#a55ee8); animation-delay:1.8s; animation-duration:6s;"></div>
+                    </div>
+
+                    <div class="cake-container">
+                        <div class="cake-wrapper" id="interactive-cake-wrapper">
+                            <div class="cake">
+                                <div class="plate"></div>
+                                <div class="layer layer-bottom"></div>
+                                <div class="layer layer-middle">
+                                    <div class="strawberry-slices">
+                                        <div class="strawberry slice-1"></div>
+                                        <div class="strawberry slice-2"></div>
+                                        <div class="strawberry slice-3"></div>
+                                    </div>
+                                </div>
+                                <div class="layer layer-top"></div>
+                                <div class="icing">
+                                    <div class="cream-swirl swirl-1"></div>
+                                    <div class="cream-swirl swirl-2"></div>
+                                    <div class="cream-swirl swirl-3"></div>
+                                    <div class="cream-swirl swirl-4"></div>
+                                </div>
+                                <div class="drips">
+                                    <div class="drip drip-1"></div>
+                                    <div class="drip drip-2"></div>
+                                    <div class="drip drip-3"></div>
+                                </div>
+                                <div class="single-candle-wrapper">
+                                    <!-- Only one candle with real flame behavior -->
+                                    <div class="candle large-candle" id="single-candle">
+                                        <div class="flame-halo"></div>
+                                        <div class="flame"></div>
+                                        <div class="smoke"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bouncing Scroll Down Arrow Button (below cake) -->
+                        <button id="scroll-down-arrow-btn" class="scroll-down-arrow-btn hidden"
+                            aria-label="Scroll to surprise letter">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Surprise Cushion Section (Scrollable, revealed after blowing candle) -->
+            <div class="room-section room-envelope-scene surprise-hidden">
+                <div class="tatami-floor full-tatami">
+                    <!-- Confetti Rain (Golden Streamers + Pieces) -->
+                    <div class="confetti-sprinkles-layer">
+                        <!-- Gold streamers -->
+                        <div class="cf-streamer" style="left:4%;  animation-delay:0s;    animation-duration:3s;   background:#ffd700;"></div>
+                        <div class="cf-streamer" style="left:11%; animation-delay:0.5s;  animation-duration:3.5s; background:#ff9500;"></div>
+                        <div class="cf-streamer" style="left:20%; animation-delay:1.1s;  animation-duration:2.8s; background:#ffe066;"></div>
+                        <div class="cf-streamer" style="left:31%; animation-delay:1.8s;  animation-duration:3.2s; background:#ffd700;"></div>
+                        <div class="cf-streamer" style="left:42%; animation-delay:0.3s;  animation-duration:2.6s; background:#ffb300;"></div>
+                        <div class="cf-streamer" style="left:53%; animation-delay:2.1s;  animation-duration:3.8s; background:#ff9500;"></div>
+                        <div class="cf-streamer" style="left:63%; animation-delay:0.9s;  animation-duration:3s;   background:#ffe066;"></div>
+                        <div class="cf-streamer" style="left:74%; animation-delay:1.5s;  animation-duration:2.9s; background:#ffd700;"></div>
+                        <div class="cf-streamer" style="left:84%; animation-delay:0.7s;  animation-duration:3.4s; background:#ff9500;"></div>
+                        <div class="cf-streamer" style="left:93%; animation-delay:2.4s;  animation-duration:3.1s; background:#ffb300;"></div>
+                        <!-- Repeat wave for continuous rain -->
+                        <div class="cf-streamer" style="left:7%;  animation-delay:1.3s;  animation-duration:3.2s; background:#ffe066;"></div>
+                        <div class="cf-streamer" style="left:17%; animation-delay:2.6s;  animation-duration:2.7s; background:#ffd700;"></div>
+                        <div class="cf-streamer" style="left:28%; animation-delay:0.6s;  animation-duration:3.6s; background:#ffb300;"></div>
+                        <div class="cf-streamer" style="left:38%; animation-delay:1.9s;  animation-duration:3s;   background:#ff9500;"></div>
+                        <div class="cf-streamer" style="left:48%; animation-delay:1.2s;  animation-duration:2.5s; background:#ffe066;"></div>
+                        <div class="cf-streamer" style="left:58%; animation-delay:2.8s;  animation-duration:3.3s; background:#ffd700;"></div>
+                        <div class="cf-streamer" style="left:68%; animation-delay:0.4s;  animation-duration:2.9s; background:#ffb300;"></div>
+                        <div class="cf-streamer" style="left:78%; animation-delay:2s;    animation-duration:3.5s; background:#ff9500;"></div>
+                        <div class="cf-streamer" style="left:88%; animation-delay:1.6s;  animation-duration:2.8s; background:#ffe066;"></div>
+                        <!-- Small gold pieces -->
+                        <div class="cf-piece" style="left:3%;  animation-delay:0.2s;  animation-duration:2.4s; background:#ffd700;"></div>
+                        <div class="cf-piece" style="left:13%; animation-delay:1.4s;  animation-duration:3s;   background:#ff9500;"></div>
+                        <div class="cf-piece" style="left:25%; animation-delay:2.2s;  animation-duration:2.7s; background:#ffe066;"></div>
+                        <div class="cf-piece" style="left:36%; animation-delay:0.8s;  animation-duration:3.2s; background:#ffb300;"></div>
+                        <div class="cf-piece" style="left:47%; animation-delay:1.7s;  animation-duration:2.5s; background:#ffd700;"></div>
+                        <div class="cf-piece" style="left:57%; animation-delay:2.9s;  animation-duration:3.4s; background:#ff9500;"></div>
+                        <div class="cf-piece" style="left:67%; animation-delay:0.1s;  animation-duration:2.8s; background:#ffe066;"></div>
+                        <div class="cf-piece" style="left:76%; animation-delay:1.1s;  animation-duration:3.1s; background:#ffb300;"></div>
+                        <div class="cf-piece" style="left:86%; animation-delay:2.3s;  animation-duration:2.6s; background:#ffd700;"></div>
+                        <div class="cf-piece" style="left:95%; animation-delay:0.6s;  animation-duration:3.3s; background:#ff9500;"></div>
+                    </div>
+
+                    <!-- Scrapbook Envelope sitting on its Zabuton cushion -->
+                    <div class="envelope-cushion-wrapper">
+                        <!-- Envelope Surprise -->
+                        <div class="envelope-wrapper">
+                            <div class="envelope" id="envelope-trigger">
+                                <div class="envelope-back"></div>
+                                <div class="envelope-flap"></div>
+                                <div class="envelope-front"></div>
+                                <!-- Out-sliding letter card -->
+                                <div class="envelope-letter" id="envelope-letter">
+                                    <div class="letter-washi-tape"></div>
+                                    <div class="letter-content">
+                                        <div class="tattoo-polaroid-frame">
+                                            <img src="shinchan_gold_seal.png" alt="Shinchan Gold Seal"
+                                                class="letter-tattoo-img">
+                                            <span class="letter-caption">Arpita's Matcha Buddy 🥤</span>
+                                        </div>
+                                        <h3 class="letter-title">お誕生日おめでとう!</h3>
+                                        <p class="letter-body-text">To the smartest and bravest wonder girl with the
+                                            warmest heart and an unstoppable spirit...</p>
+                                        <p class="letter-body-paragraph">
+                                            Happy Birthday to someone who is truly amazing, beautiful, and inspiring! 🎈
+                                            Cheers to your incredible hard work, your growth, and all the big wins
+                                            waiting for you in the year ahead. May all your dreams come true! 🚀 🌸✨
+                                        </p>
+                                        <p class="letter-closing">— With lots of Happiness &amp; Sparkles</p>
+                                        <p class="letter-signature">From Sagrooo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Zabuton Cushion -->
+                        <div class="zabuton-cushion"></div>
+                        <div class="cushion-label">Click card to open 🌸</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p class="created-by">🎂 Birthday Gift for Pogoo | 2026 🎂</p>
+    </footer>
+
+    <!-- Fireworks & Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
